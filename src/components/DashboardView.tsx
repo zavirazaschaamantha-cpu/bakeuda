@@ -265,8 +265,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     <stop offset="95%" stopColor="#1E3A8A" stopOpacity={0}/>
                   </linearGradient>
                   <linearGradient id="colorKeluar" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#10B981" stopOpacity={0.2}/>
-                    <stop offset="95%" stopColor="#10B981" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="#EAB308" stopOpacity={0.25}/>
+                    <stop offset="95%" stopColor="#EAB308" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#F1F5F9" />
@@ -275,7 +275,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 <Tooltip />
                 <Legend iconType="circle" wrapperStyle={{ fontSize: '10px', fontWeight: 'bold' }} />
                 <Area type="monotone" dataKey="Masuk" stroke="#1E3A8A" strokeWidth={2.5} fillOpacity={1} fill="url(#colorMasuk)" name="Surat Masuk" />
-                <Area type="monotone" dataKey="Keluar" stroke="#10B981" strokeWidth={2.5} fillOpacity={1} fill="url(#colorKeluar)" name="Surat Keluar" />
+                <Area type="monotone" dataKey="Keluar" stroke="#EAB308" strokeWidth={2.5} fillOpacity={1} fill="url(#colorKeluar)" name="Surat Keluar" />
               </AreaChart>
             </ResponsiveContainer>
           </div>

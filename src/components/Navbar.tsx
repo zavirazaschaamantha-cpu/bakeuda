@@ -88,13 +88,13 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="flex items-center gap-4">
         
         {/* Role Quick Swapper for Reviewer */}
-        <div className="flex items-center bg-amber-50 border border-amber-200 dark:bg-amber-950/20 dark:border-amber-900/40 rounded-full px-3 py-1 text-xs gap-1.5">
-          <Shield className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
-          <span className="text-amber-800 dark:text-amber-300 font-medium hidden sm:inline">Role Simulasi:</span>
+        <div className="flex items-center bg-yellow-100/80 border border-yellow-300 dark:bg-yellow-950/20 dark:border-yellow-900/40 rounded-full px-3 py-1 text-xs gap-1.5 shadow-sm">
+          <Shield className="w-3.5 h-3.5 text-yellow-600 dark:text-yellow-400 font-bold" />
+          <span className="text-yellow-800 dark:text-yellow-300 font-bold hidden sm:inline">Simulasi Role:</span>
           <select
             value={currentUser.role}
             onChange={(e) => onRoleChange(e.target.value as Role)}
-            className="bg-transparent text-amber-900 dark:text-amber-200 font-bold border-none focus:ring-0 cursor-pointer text-xs p-0 pr-6"
+            className="bg-transparent text-yellow-900 dark:text-yellow-200 font-extrabold border-none focus:ring-0 cursor-pointer text-xs p-0 pr-6"
           >
             <option value="Super Admin" className="text-slate-800">Super Admin</option>
             <option value="Admin Sekretariat" className="text-slate-800">Admin Sekretariat</option>

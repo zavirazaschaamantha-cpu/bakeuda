@@ -214,9 +214,9 @@ export const SuratKeluarView: React.FC<SuratKeluarViewProps> = ({
           {canModify && (
             <button
               onClick={openNewForm}
-              className="flex items-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold shadow-md shadow-blue-500/10 transition-colors"
+              className="flex items-center gap-1.5 px-4 py-2 bg-[#1E3A8A] hover:bg-blue-800 text-white border border-yellow-400/80 rounded-2xl font-extrabold shadow-md shadow-yellow-400/10 transition-all"
             >
-              <Plus className="w-4 h-4" />
+              <Plus className="w-4 h-4 text-yellow-400" />
               <span>Registrasi Outgoing</span>
             </button>
           )}
@@ -446,7 +446,7 @@ export const SuratKeluarView: React.FC<SuratKeluarViewProps> = ({
             </button>
             <button
               type="submit"
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold shadow-md shadow-blue-500/10"
+              className="px-5 py-2.5 bg-[#1E3A8A] hover:bg-blue-800 text-white border border-yellow-400/80 rounded-xl font-extrabold shadow-md transition-all"
             >
               Simpan Data
             </button>
