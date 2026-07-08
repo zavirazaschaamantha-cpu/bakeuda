@@ -37,22 +37,111 @@ import { LoginView } from './components/LoginView';
 import { Toast } from './components/Toast';
 
 export default function App() {
-  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [currentUser, setCurrentUser] = useState<User | null>(() => {
+    const saved = localStorage.getItem('sods_current_user');
+    return saved ? JSON.parse(saved) : null;
+  });
   const [activeView, setActiveView] = useState('dashboard');
   const [darkMode, setDarkMode] = useState(false);
 
-  // Core State Engines
-  const [usersList, setUsersList] = useState<User[]>(mockUsers);
-  const [suratMasukList, setSuratMasukList] = useState<SuratMasuk[]>(mockSuratMasuk);
-  const [suratKeluarList, setSuratKeluarList] = useState<SuratKeluar[]>(mockSuratKeluar);
-  const [disposisiList, setDisposisiList] = useState<Disposisi[]>(mockDisposisi);
-  const [agendaList, setAgendaList] = useState<Agenda[]>(mockAgenda);
-  const [reminderList, setReminderList] = useState<Reminder[]>(mockReminders);
-  const [arsipList, setArsipList] = useState<Arsip[]>(mockArsip);
-  const [pengumumanList, setPengumumanList] = useState<Pengumuman[]>(mockPengumuman);
-  const [pegawaiList, setPegawaiList] = useState<Pegawai[]>(mockPegawai);
-  const [auditLogs, setAuditLogs] = useState<AuditLog[]>(mockAuditLogs);
-  const [notifications, setNotifications] = useState<Notification[]>(mockNotifications);
+  // Core State Engines with localStorage hydration
+  const [usersList, setUsersList] = useState<User[]>(() => {
+    const saved = localStorage.getItem('sods_users');
+    return saved ? JSON.parse(saved) : mockUsers;
+  });
+  const [suratMasukList, setSuratMasukList] = useState<SuratMasuk[]>(() => {
+    const saved = localStorage.getItem('sods_surat_masuk');
+    return saved ? JSON.parse(saved) : mockSuratMasuk;
+  });
+  const [suratKeluarList, setSuratKeluarList] = useState<SuratKeluar[]>(() => {
+    const saved = localStorage.getItem('sods_surat_keluar');
+    return saved ? JSON.parse(saved) : mockSuratKeluar;
+  });
+  const [disposisiList, setDisposisiList] = useState<Disposisi[]>(() => {
+    const saved = localStorage.getItem('sods_disposisi');
+    return saved ? JSON.parse(saved) : mockDisposisi;
+  });
+  const [agendaList, setAgendaList] = useState<Agenda[]>(() => {
+    const saved = localStorage.getItem('sods_agenda');
+    return saved ? JSON.parse(saved) : mockAgenda;
+  });
+  const [reminderList, setReminderList] = useState<Reminder[]>(() => {
+    const saved = localStorage.getItem('sods_reminders');
+    return saved ? JSON.parse(saved) : mockReminders;
+  });
+  const [arsipList, setArsipList] = useState<Arsip[]>(() => {
+    const saved = localStorage.getItem('sods_arsip');
+    return saved ? JSON.parse(saved) : mockArsip;
+  });
+  const [pengumumanList, setPengumumanList] = useState<Pengumuman[]>(() => {
+    const saved = localStorage.getItem('sods_pengumuman');
+    return saved ? JSON.parse(saved) : mockPengumuman;
+  });
+  const [pegawaiList, setPegawaiList] = useState<Pegawai[]>(() => {
+    const saved = localStorage.getItem('sods_pegawai');
+    return saved ? JSON.parse(saved) : mockPegawai;
+  });
+  const [auditLogs, setAuditLogs] = useState<AuditLog[]>(() => {
+    const saved = localStorage.getItem('sods_audit_logs');
+    return saved ? JSON.parse(saved) : mockAuditLogs;
+  });
+  const [notifications, setNotifications] = useState<Notification[]>(() => {
+    const saved = localStorage.getItem('sods_notifications');
+    return saved ? JSON.parse(saved) : mockNotifications;
+  });
+
+  // Automatically synchronize states to localStorage
+  useEffect(() => {
+    if (currentUser) {
+      localStorage.setItem('sods_current_user', JSON.stringify(currentUser));
+    } else {
+      localStorage.removeItem('sods_current_user');
+    }
+  }, [currentUser]);
+
+  useEffect(() => {
+    localStorage.setItem('sods_users', JSON.stringify(usersList));
+  }, [usersList]);
+
+  useEffect(() => {
+    localStorage.setItem('sods_surat_masuk', JSON.stringify(suratMasukList));
+  }, [suratMasukList]);
+
+  useEffect(() => {
+    localStorage.setItem('sods_surat_keluar', JSON.stringify(suratKeluarList));
+  }, [suratKeluarList]);
+
+  useEffect(() => {
+    localStorage.setItem('sods_disposisi', JSON.stringify(disposisiList));
+  }, [disposisiList]);
+
+  useEffect(() => {
+    localStorage.setItem('sods_agenda', JSON.stringify(agendaList));
+  }, [agendaList]);
+
+  useEffect(() => {
+    localStorage.setItem('sods_reminders', JSON.stringify(reminderList));
+  }, [reminderList]);
+
+  useEffect(() => {
+    localStorage.setItem('sods_arsip', JSON.stringify(arsipList));
+  }, [arsipList]);
+
+  useEffect(() => {
+    localStorage.setItem('sods_pengumuman', JSON.stringify(pengumumanList));
+  }, [pengumumanList]);
+
+  useEffect(() => {
+    localStorage.setItem('sods_pegawai', JSON.stringify(pegawaiList));
+  }, [pegawaiList]);
+
+  useEffect(() => {
+    localStorage.setItem('sods_audit_logs', JSON.stringify(auditLogs));
+  }, [auditLogs]);
+
+  useEffect(() => {
+    localStorage.setItem('sods_notifications', JSON.stringify(notifications));
+  }, [notifications]);
 
   // Toast alert states
   const [toast, setToast] = useState<{ show: boolean; text: string; type: 'success' | 'warning' | 'danger' | 'info' }>({

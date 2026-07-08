@@ -21,11 +21,11 @@ export const PengaturanView: React.FC<PengaturanViewProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState<'instansi' | 'database' | 'backup'>('instansi');
 
-  // Form Fields
-  const [instansi, setInstansi] = useState('Badan Keuangan Daerah Kota Pangkalpinang');
-  const [kepalaBadan, setKepalaBadan] = useState('Drs. Hendra Wijaya, M.Si.');
-  const [nipKepala, setNipKepala] = useState('197204121997031002');
-  const [alamat, setAlamat] = useState('Jl. Jenderal Sudirman No. 12, Kota Pangkalpinang');
+  // Form Fields loaded from localStorage or fallback
+  const [instansi, setInstansi] = useState(() => localStorage.getItem('sods_setting_instansi') || 'Badan Keuangan Daerah Kota Pangkalpinang');
+  const [kepalaBadan, setKepalaBadan] = useState(() => localStorage.getItem('sods_setting_kepala') || 'Dr. Budiyanto, M.Si.');
+  const [nipKepala, setNipKepala] = useState(() => localStorage.getItem('sods_setting_nip') || '197103151996031002');
+  const [alamat, setAlamat] = useState(() => localStorage.getItem('sods_setting_alamat') || 'Jl. Merdeka No.4, Pangkalpinang, Prov. Kep. Bangka Belitung 33111');
 
   const [dbHost, setDbHost] = useState('127.0.0.1');
   const [dbName, setDbName] = useState('sods_bakeuda_db');
@@ -33,28 +33,48 @@ export const PengaturanView: React.FC<PengaturanViewProps> = ({
 
   const handleSaveSettings = (e: React.FormEvent) => {
     e.preventDefault();
-    addLog('Edit Data', 'Memperbarui profil instansi pemerintah.');
-    triggerToast('Konfigurasi instansi berhasil disimpan!', 'success');
+    localStorage.setItem('sods_setting_instansi', instansi);
+    localStorage.setItem('sods_setting_kepala', kepalaBadan);
+    localStorage.setItem('sods_setting_nip', nipKepala);
+    localStorage.setItem('sods_setting_alamat', alamat);
+    addLog('Edit Data', 'Memperbarui profil instansi pemerintah daerah.');
+    triggerToast('Konfigurasi instansi berhasil disimpan secara permanen!', 'success');
   };
 
   const handleBackup = () => {
-    // Simulate Backup download
-    const data = {
-      instansi,
-      kepalaBadan,
-      nipKepala,
-      backup_date: new Date().toISOString()
+    // Collect all real data from localStorage
+    const backupData = {
+      app_info: {
+        system_name: 'Smart Office Dashboard Sekretariat (SODS)',
+        instansi_name: instansi,
+        kepala_badan: kepalaBadan,
+        nip_kepala: nipKepala,
+        alamat: alamat,
+        export_date: new Date().toISOString()
+      },
+      users: JSON.parse(localStorage.getItem('sods_users') || '[]'),
+      surat_masuk: JSON.parse(localStorage.getItem('sods_surat_masuk') || '[]'),
+      surat_keluar: JSON.parse(localStorage.getItem('sods_surat_keluar') || '[]'),
+      disposisi: JSON.parse(localStorage.getItem('sods_disposisi') || '[]'),
+      agenda: JSON.parse(localStorage.getItem('sods_agenda') || '[]'),
+      reminders: JSON.parse(localStorage.getItem('sods_reminders') || '[]'),
+      arsip: JSON.parse(localStorage.getItem('sods_arsip') || '[]'),
+      pengumuman: JSON.parse(localStorage.getItem('sods_pengumuman') || '[]'),
+      pegawai: JSON.parse(localStorage.getItem('sods_pegawai') || '[]'),
+      audit_logs: JSON.parse(localStorage.getItem('sods_audit_logs') || '[]'),
+      notifications: JSON.parse(localStorage.getItem('sods_notifications') || '[]')
     };
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+
+    const blob = new Blob([JSON.stringify(backupData, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `SODS_Backup_Database_Bakeuda_${new Date().toISOString().slice(0, 10)}.json`;
+    link.download = `SODS_Backup_Bakeuda_Pangkalpinang_${new Date().toISOString().slice(0, 10)}.json`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
-    triggerToast('Database backup SQL berhasil diunduh!', 'success');
+    triggerToast('Backup data riil berhasil diunduh!', 'success');
   };
 
   // Preformatted Laravel 12 / Database structures for transparency
