@@ -1,0 +1,224 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Registered staff account details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "nip": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "status": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "division": { "type": "string" },
+        "fotoUrl": { "type": "string" }
+      }
+    },
+    "SuratMasuk": {
+      "title": "SuratMasuk",
+      "description": "Incoming official letters details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nomorSurat": { "type": "string" },
+        "tanggalSurat": { "type": "string" },
+        "tanggalDiterima": { "type": "string" },
+        "asalSurat": { "type": "string" },
+        "perihal": { "type": "string" },
+        "kategori": { "type": "string" },
+        "lampiran": { "type": "string" },
+        "status": { "type": "string" },
+        "tujuanDisposisi": { "type": "string" },
+        "prioritas": { "type": "string" },
+        "keterangan": { "type": "string" },
+        "pdfUrl": { "type": "string" },
+        "timeline": { "type": "array" }
+      }
+    },
+    "SuratKeluar": {
+      "title": "SuratKeluar",
+      "description": "Outgoing official letters details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nomorSurat": { "type": "string" },
+        "tanggalSurat": { "type": "string" },
+        "tanggalDikirim": { "type": "string" },
+        "tujuanSurat": { "type": "string" },
+        "perihal": { "type": "string" },
+        "kategori": { "type": "string" },
+        "sifat": { "type": "string" },
+        "status": { "type": "string" },
+        "pembuat": { "type": "string" },
+        "nipPembuat": { "type": "string" },
+        "keterangan": { "type": "string" },
+        "pdfUrl": { "type": "string" }
+      }
+    },
+    "Disposisi": {
+      "title": "Disposisi",
+      "description": "Official disposition letter forwarding",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "suratMasukId": { "type": "string" },
+        "nomorSurat": { "type": "string" },
+        "perihal": { "type": "string" },
+        "pengirim": { "type": "string" },
+        "penerima": { "type": "string" },
+        "tanggal": { "type": "string" },
+        "catatan": { "type": "string" },
+        "instruksi": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    },
+    "Agenda": {
+      "title": "Agenda",
+      "description": "Office agenda calendar event",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "judul": { "type": "string" },
+        "tanggal": { "type": "string" },
+        "waktu": { "type": "string" },
+        "tempat": { "type": "string" },
+        "kategori": { "type": "string" },
+        "penyelenggara": { "type": "string" },
+        "keterangan": { "type": "string" },
+        "disetujui": { "type": "boolean" },
+        "disetujuiOleh": { "type": "string" }
+      }
+    },
+    "Reminder": {
+      "title": "Reminder",
+      "description": "Task due alert",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "task": { "type": "string" },
+        "deadline": { "type": "string" },
+        "prioritas": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    },
+    "Arsip": {
+      "title": "Arsip",
+      "description": "Digital office archives",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nama": { "type": "string" },
+        "kategori": { "type": "string" },
+        "tanggalArsip": { "type": "string" },
+        "ukuran": { "type": "string" },
+        "tipe": { "type": "string" },
+        "pengunggah": { "type": "string" },
+        "folder": { "type": "string" },
+        "riwayat": { "type": "array" }
+      }
+    },
+    "Pengumuman": {
+      "title": "Pengumuman",
+      "description": "Public office announcement bulletin",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "judul": { "type": "string" },
+        "content": { "type": "string" },
+        "tanggal": { "type": "string" },
+        "author": { "type": "string" },
+        "kategori": { "type": "string" }
+      }
+    },
+    "Pegawai": {
+      "title": "Pegawai",
+      "description": "Bakeuda employee register",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nip": { "type": "string" },
+        "nama": { "type": "string" },
+        "jabatan": { "type": "string" },
+        "golongan": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    },
+    "AuditLog": {
+      "title": "AuditLog",
+      "description": "System access audit trail",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userRole": { "type": "string" },
+        "aktivitas": { "type": "string" },
+        "detail": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "ipAddress": { "type": "string" }
+      }
+    },
+    "Notification": {
+      "title": "Notification",
+      "description": "User in-app notifications",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "time": { "type": "string" },
+        "read": { "type": "boolean" },
+        "type": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": "User",
+      "description": "Collection of users"
+    },
+    "surat_masuk": {
+      "schema": "SuratMasuk",
+      "description": "Collection of incoming letters"
+    },
+    "surat_keluar": {
+      "schema": "SuratKeluar",
+      "description": "Collection of outgoing letters"
+    },
+    "disposisi": {
+      "schema": "Disposisi",
+      "description": "Collection of dispositions"
+    },
+    "agenda": {
+      "schema": "Agenda",
+      "description": "Collection of agenda items"
+    },
+    "reminders": {
+      "schema": "Reminder",
+      "description": "Collection of task reminders"
+    },
+    "arsip": {
+      "schema": "Arsip",
+      "description": "Collection of digital archive files"
+    },
+    "pengumuman": {
+      "schema": "Pengumuman",
+      "description": "Collection of announcements"
+    },
+    "pegawai": {
+      "schema": "Pegawai",
+      "description": "Collection of staff details"
+    },
+    "audit_logs": {
+      "schema": "AuditLog",
+      "description": "Collection of system access logs"
+    },
+    "notifications": {
+      "schema": "Notification",
+      "description": "Collection of in-app notifications"
+    }
+  }
+}
