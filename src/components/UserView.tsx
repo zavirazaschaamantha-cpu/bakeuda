@@ -68,8 +68,13 @@ export const UserView: React.FC<UserViewProps> = ({
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!username || !name || !nip) {
-      triggerToast('Harap isi field wajib!', 'warning');
+    if (!username || !name || !nip || !email) {
+      triggerToast('Harap isi field wajib termasuk Email Instansi!', 'warning');
+      return;
+    }
+
+    if (!email.includes('@') || !email.includes('.')) {
+      triggerToast('Format Email Instansi tidak valid!', 'warning');
       return;
     }
 
@@ -270,9 +275,10 @@ export const UserView: React.FC<UserViewProps> = ({
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <label className="font-bold text-slate-700 dark:text-slate-300">Email Instansi</label>
+              <label className="font-bold text-slate-700 dark:text-slate-300">Email Instansi <span className="text-red-500">*</span></label>
               <input
                 type="email"
+                required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="rina@pangkalpinangkota.go.id"
