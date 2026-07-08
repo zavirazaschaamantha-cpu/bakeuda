@@ -1,0 +1,8 @@
+{
+  "name": "SODS Bakeuda Pangkalpinang",
+  "description": "Smart Office Dashboard Sekretariat (SODS) - Sistem Monitoring Administrasi Terintegrasi Bagian Sekretariat Badan Keuangan Daerah Kota Pangkalpinang",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
