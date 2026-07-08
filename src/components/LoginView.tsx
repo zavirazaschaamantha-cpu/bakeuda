@@ -69,7 +69,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
       return;
     }
     if (!regEmail.includes('@') || !regEmail.includes('.')) {
-      setErrorMsg('Format email instansi tidak valid!');
+      setErrorMsg('Format email tidak valid!');
       triggerToast('Format email tidak valid!', 'danger');
       return;
     }
@@ -117,7 +117,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
   };
 
   return (
-    <div className="min-h-screen bg-[#F1F5F9] dark:bg-gray-950 flex flex-col md:flex-row items-center justify-center p-6 text-xs text-slate-500 font-semibold gap-8">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-gray-950 flex flex-col md:flex-row items-center justify-center p-6 text-xs text-slate-500 font-semibold gap-8">
       
       {/* Left decoration: Logo & Title card */}
       <div className="max-w-md text-left space-y-4">
@@ -297,7 +297,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <label className="font-bold text-slate-700 dark:text-slate-300">Email Instansi <span className="text-red-500">*</span></label>
+                  <label className="font-bold text-slate-700 dark:text-slate-300">Email (Dinas / Pribadi) <span className="text-red-500">*</span></label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-2.5 h-3.5 w-3.5 text-slate-400" />
                     <input
@@ -305,7 +305,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
                       required
                       value={regEmail}
                       onChange={(e) => setRegEmail(e.target.value)}
-                      placeholder="hendra@pangkalpinangkota.go.id"
+                      placeholder="cth: hendra@gmail.com"
                       className="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 dark:bg-gray-950 dark:border-gray-800 rounded-xl outline-none focus:border-blue-500 dark:text-slate-100 transition-all text-xs"
                     />
                   </div>

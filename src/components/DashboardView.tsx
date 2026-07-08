@@ -175,7 +175,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* Card 1 */}
         <div
           onClick={() => setActiveView('surat_masuk')}
-          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border border-slate-150 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
+          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
         >
           <div>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Surat Masuk Hari Ini</p>
@@ -192,7 +192,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* Card 2 */}
         <div
           onClick={() => setActiveView('surat_keluar')}
-          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border border-slate-150 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
+          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
         >
           <div>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Surat Keluar Hari Ini</p>
@@ -209,7 +209,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* Card 3 */}
         <div
           onClick={() => setActiveView('disposisi')}
-          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border border-slate-150 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
+          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
         >
           <div>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Disposisi Aktif</p>
@@ -226,7 +226,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* Card 4 */}
         <div
           onClick={() => setActiveView('arsip')}
-          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border border-slate-155 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
+          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
         >
           <div>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Total Arsip Digital</p>

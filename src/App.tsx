@@ -429,7 +429,7 @@ export default function App() {
   }
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#F1F5F9] dark:bg-[#070B14] font-sans antialiased text-slate-700 transition-colors">
+    <div className="flex h-screen overflow-hidden bg-[#F8FAFC] dark:bg-[#070B14] font-sans antialiased text-slate-700 transition-colors">
       
       {/* Left Sidebar Menu */}
       <Sidebar

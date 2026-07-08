@@ -69,14 +69,14 @@ export const UserView: React.FC<UserViewProps> = ({
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
     if (!username || !name || !nip || !email) {
-      triggerToast('Harap isi field wajib termasuk Email Instansi!', 'warning');
-      return;
-    }
-
-    if (!email.includes('@') || !email.includes('.')) {
-      triggerToast('Format Email Instansi tidak valid!', 'warning');
-      return;
-    }
+       triggerToast('Harap isi field wajib termasuk Email!', 'warning');
+       return;
+     }
+ 
+     if (!email.includes('@') || !email.includes('.')) {
+       triggerToast('Format Email tidak valid!', 'warning');
+       return;
+     }
 
     if (isEditing && selectedUser) {
       onEditUser(selectedUser.id, {
@@ -275,13 +275,13 @@ export const UserView: React.FC<UserViewProps> = ({
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <label className="font-bold text-slate-700 dark:text-slate-300">Email Instansi <span className="text-red-500">*</span></label>
+              <label className="font-bold text-slate-700 dark:text-slate-300">Email (Dinas / Pribadi) <span className="text-red-500">*</span></label>
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="rina@pangkalpinangkota.go.id"
+                placeholder="cth: rina@gmail.com atau rina@pangkalpinangkota.go.id"
                 className="w-full border border-slate-200 dark:border-gray-800 dark:bg-gray-900 rounded-xl px-4 py-2.5 outline-none focus:border-blue-500 text-slate-800"
               />
             </div>
