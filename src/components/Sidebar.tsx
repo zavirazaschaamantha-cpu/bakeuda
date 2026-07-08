@@ -72,12 +72,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       
       {/* Brand Header */}
       <div className="p-6 border-b border-white/10 dark:border-gray-800/60 flex items-center gap-3">
-        <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-[#1E3A8A] font-extrabold text-xl shadow-lg shrink-0">
+        <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center text-blue-950 font-extrabold text-xl shadow-lg ring-2 ring-white/20 shrink-0">
           BK
         </div>
         <div className="leading-none">
           <h2 className="text-white font-bold text-sm tracking-tight">SODS BAKEUDA</h2>
-          <p className="text-blue-200 text-[10px] mt-1 font-medium">Kota Pangkalpinang</p>
+          <p className="text-yellow-300 text-[10px] mt-1 font-bold tracking-wider uppercase">Kota Pangkalpinang</p>
         </div>
       </div>
 
@@ -88,7 +88,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
         <div className="overflow-hidden">
           <p className="text-xs font-bold text-white truncate leading-none">{currentUser.name}</p>
-          <span className="text-[9px] text-blue-200/90 font-bold block uppercase tracking-wider mt-1.5">● {currentUser.role}</span>
+          <span className="text-[9px] text-yellow-300 font-extrabold block uppercase tracking-wider mt-1.5">● {currentUser.role}</span>
         </div>
       </div>
 
@@ -104,14 +104,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
               onClick={() => setActiveView(item.id)}
               className={`w-full flex items-center gap-3 px-3.5 py-2 rounded-lg text-xs font-semibold transition-all duration-150 text-left ${
                 isActive
-                  ? 'bg-white/10 dark:bg-blue-600/35 text-white font-bold shadow-md shadow-black/5'
-                  : 'hover:bg-white/5 text-blue-100/70 hover:text-white'
+                  ? 'bg-yellow-400 text-blue-950 font-extrabold shadow-md shadow-yellow-400/20'
+                  : 'hover:bg-white/10 text-blue-100/80 hover:text-white'
               }`}
             >
-              <IconComponent className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-blue-300/70'}`} />
+              <IconComponent className={`w-4 h-4 shrink-0 ${isActive ? 'text-blue-950' : 'text-blue-200/80'}`} />
               <span>{item.label}</span>
               {isActive && (
-                <span className="ml-auto w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                <span className="ml-auto w-1.5 h-1.5 rounded-full bg-blue-950 animate-pulse" />
               )}
             </button>
           );
@@ -129,14 +129,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   onClick={() => setActiveView(item.id)}
                   className={`w-full flex items-center gap-3 px-3.5 py-2 rounded-lg text-xs font-semibold transition-all duration-150 text-left ${
                     isActive
-                      ? 'bg-white/10 dark:bg-blue-600/35 text-white font-bold shadow-md shadow-black/5'
-                      : 'hover:bg-white/5 text-blue-100/70 hover:text-white'
+                      ? 'bg-yellow-400 text-blue-950 font-extrabold shadow-md shadow-yellow-400/20'
+                      : 'hover:bg-white/10 text-blue-100/80 hover:text-white'
                   }`}
                 >
-                  <IconComponent className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-blue-300/70'}`} />
+                  <IconComponent className={`w-4 h-4 shrink-0 ${isActive ? 'text-blue-950' : 'text-blue-200/80'}`} />
                   <span>{item.label}</span>
                   {isActive && (
-                    <span className="ml-auto w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                    <span className="ml-auto w-1.5 h-1.5 rounded-full bg-blue-950 animate-pulse" />
                   )}
                 </button>
               );

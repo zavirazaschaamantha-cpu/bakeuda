@@ -143,7 +143,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
     <div className="space-y-6">
       
       {/* Welcome Banner */}
-      <div className="bg-gradient-to-r from-[#1E3A8A] via-[#2563EB] to-blue-900 p-6 rounded-2xl text-white shadow-lg flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div className="bg-gradient-to-r from-[#1E3A8A] via-[#2563EB] to-blue-900 p-6 rounded-2xl text-white shadow-lg flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-l-8 border-yellow-400">
         <div>
           <h1 className="text-2xl font-extrabold tracking-tight leading-none md:text-3xl">
             Selamat Datang, {currentUser.name}
@@ -152,7 +152,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             Sistem Informasi Monitoring Administrasi Terintegrasi Sekretariat Badan Keuangan Daerah Kota Pangkalpinang.
           </p>
           <div className="mt-4 flex gap-2">
-            <span className="bg-white/10 text-white border border-white/20 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            <span className="bg-yellow-400 text-blue-950 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
               Sesi: {currentUser.role}
             </span>
             <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold px-3 py-1 rounded-full flex items-center gap-1.5 uppercase tracking-wider">
@@ -163,10 +163,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
         
         {/* Real-time Jam & Info */}
-        <div className="bg-black/10 backdrop-blur-md border border-white/10 rounded-xl p-4 flex flex-col text-right items-end justify-center">
-          <span className="text-[10px] font-extrabold text-blue-200 tracking-widest uppercase">HARI INI</span>
+        <div className="bg-black/15 backdrop-blur-md border border-yellow-400/20 rounded-xl p-4 flex flex-col text-right items-end justify-center">
+          <span className="text-[10px] font-extrabold text-yellow-300 tracking-widest uppercase">HARI INI</span>
           <span className="text-lg font-bold font-mono tracking-tight text-white mt-0.5">Selasa, 7 Juli 2026</span>
-          <span className="text-[10px] font-semibold text-blue-200/80 mt-0.5">Kota Pangkalpinang</span>
+          <span className="text-[10px] font-bold text-yellow-100/90 mt-0.5">Kota Pangkalpinang</span>
         </div>
       </div>
 
@@ -175,7 +175,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* Card 1 */}
         <div
           onClick={() => setActiveView('surat_masuk')}
-          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
+          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border-t-4 border-[#1E3A8A] border-x border-b border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
         >
           <div>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Surat Masuk Hari Ini</p>
@@ -192,7 +192,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* Card 2 */}
         <div
           onClick={() => setActiveView('surat_keluar')}
-          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
+          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border-t-4 border-blue-400 border-x border-b border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
         >
           <div>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Surat Keluar Hari Ini</p>
@@ -202,14 +202,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
           </div>
           <div className="w-full h-1 bg-slate-100 dark:bg-gray-800 mt-4 rounded-full overflow-hidden">
-            <div className="w-1/2 h-full bg-indigo-500"></div>
+            <div className="w-1/2 h-full bg-blue-400"></div>
           </div>
         </div>
 
         {/* Card 3 */}
         <div
           onClick={() => setActiveView('disposisi')}
-          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
+          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border-t-4 border-yellow-400 border-x border-b border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
         >
           <div>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Disposisi Aktif</p>
@@ -219,24 +219,24 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
           </div>
           <div className="w-full h-1 bg-slate-100 dark:bg-gray-800 mt-4 rounded-full overflow-hidden">
-            <div className="w-5/6 h-full bg-amber-500"></div>
+            <div className="w-5/6 h-full bg-yellow-400"></div>
           </div>
         </div>
 
         {/* Card 4 */}
         <div
           onClick={() => setActiveView('arsip')}
-          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
+          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border-t-4 border-yellow-500 border-x border-b border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
         >
           <div>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Total Arsip Digital</p>
             <div className="flex items-end justify-between mt-3">
-              <h3 className="text-3xl font-black text-slate-855 dark:text-slate-100 group-hover:text-[#1E3A8A] dark:group-hover:text-blue-400 transition-colors">{countArsip + 15}</h3>
+              <h3 className="text-3xl font-black text-slate-850 dark:text-slate-100 group-hover:text-[#1E3A8A] dark:group-hover:text-blue-400 transition-colors">{countArsip + 15}</h3>
               <span className="text-[10px] text-slate-500 font-extrabold bg-slate-50 dark:bg-gray-800 dark:text-slate-400 px-2 py-0.5 rounded">Cloud Storage</span>
             </div>
           </div>
           <div className="w-full h-1 bg-slate-100 dark:bg-gray-800 mt-4 rounded-full overflow-hidden">
-            <div className="w-full h-full bg-emerald-500 opacity-60"></div>
+            <div className="w-full h-full bg-yellow-500"></div>
           </div>
         </div>
       </div>

@@ -186,7 +186,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <img
               src={currentUser.fotoUrl}
               alt={currentUser.name}
-              className="w-8.5 h-8.5 rounded-full object-cover ring-2 ring-blue-500/20"
+              className="w-8.5 h-8.5 rounded-full object-cover ring-2 ring-yellow-400"
               referrerPolicy="no-referrer"
             />
             <div className="hidden lg:flex flex-col text-left">
@@ -201,7 +201,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <div className="px-4 py-3 border-b border-slate-100 dark:border-gray-800 bg-slate-50/50 dark:bg-gray-850/30">
                 <p className="font-bold text-slate-800 dark:text-slate-200 leading-normal">{currentUser.name}</p>
                 <p className="text-slate-400 font-mono mt-0.5">NIP. {currentUser.nip}</p>
-                <p className="text-[10px] text-blue-600 dark:text-blue-400 mt-1 uppercase font-semibold">{currentUser.division}</p>
+                <p className="text-[10px] text-[#1E3A8A] dark:text-yellow-400 mt-1 uppercase font-extrabold">{currentUser.division}</p>
               </div>
               
               <button

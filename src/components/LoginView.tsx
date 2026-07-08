@@ -121,14 +121,17 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
       
       {/* Left decoration: Logo & Title card */}
       <div className="max-w-md text-left space-y-4">
-        <div className="inline-flex p-3 bg-[#1E3A8A] text-white rounded-2xl shadow-xl shadow-blue-900/10">
+        <div className="inline-flex p-3 bg-yellow-400 text-[#1E3A8A] rounded-2xl shadow-xl shadow-yellow-400/20 ring-4 ring-blue-500/10">
           <ShieldCheck className="w-8 h-8" />
         </div>
         <div className="space-y-1.5">
           <h1 className="text-xl font-black text-slate-800 dark:text-white uppercase tracking-wide leading-tight">
             Smart Office Dashboard Sekretariat (SODS)
           </h1>
-          <p className="text-blue-700 dark:text-blue-400 font-bold">Badan Keuangan Daerah Kota Pangkalpinang</p>
+          <p className="text-[#1E3A8A] dark:text-yellow-400 font-extrabold flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-yellow-400 shrink-0" />
+            Badan Keuangan Daerah Kota Pangkalpinang
+          </p>
         </div>
         <p className="text-[11px] text-slate-400 leading-relaxed font-medium">
           Sistem administrasi persuratan terpadu dan disposisi elektronik terintegrasi. Menunjang tata kelola pemerintahan yang responsif, transparan, dan akuntabel.
@@ -223,9 +226,9 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
 
               <button
                 type="submit"
-                className="w-full py-2.5 bg-[#1E3A8A] hover:bg-blue-850 text-white font-extrabold rounded-xl flex items-center justify-center gap-1.5 shadow-lg shadow-blue-900/10 transition-colors uppercase tracking-wider text-xs"
+                className="w-full py-2.5 bg-[#1E3A8A] hover:bg-blue-800 text-white font-extrabold rounded-xl flex items-center justify-center gap-1.5 shadow-lg shadow-blue-900/10 hover:shadow-yellow-400/5 transition-all uppercase tracking-wider text-xs border border-yellow-400"
               >
-                <ShieldCheck className="w-4.5 h-4.5" />
+                <ShieldCheck className="w-4.5 h-4.5 text-yellow-400" />
                 <span>Verifikasi Akun</span>
               </button>
             </form>
@@ -236,7 +239,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
                 <button
                   type="button"
                   onClick={() => { setIsRegistering(true); setErrorMsg(''); }}
-                  className="text-[#1E3A8A] dark:text-blue-400 font-extrabold hover:underline uppercase tracking-wider ml-1"
+                  className="text-[#1E3A8A] dark:text-yellow-400 font-extrabold hover:underline uppercase tracking-wider ml-1"
                 >
                   Daftar Akun Baru
                 </button>
@@ -410,9 +413,9 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
 
               <button
                 type="submit"
-                className="w-full py-2.5 bg-[#1E3A8A] hover:bg-blue-850 text-white font-extrabold rounded-xl flex items-center justify-center gap-1.5 shadow-lg shadow-blue-900/10 transition-colors uppercase tracking-wider text-xs mt-3"
+                className="w-full py-2.5 bg-[#1E3A8A] hover:bg-blue-800 text-white font-extrabold rounded-xl flex items-center justify-center gap-1.5 shadow-lg shadow-blue-900/10 hover:shadow-yellow-400/5 transition-all uppercase tracking-wider text-xs mt-3 border border-yellow-400"
               >
-                <UserPlus className="w-4 h-4" />
+                <UserPlus className="w-4 h-4 text-yellow-400" />
                 <span>Buat Akun Baru</span>
               </button>
             </form>
@@ -423,7 +426,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
                 <button
                   type="button"
                   onClick={() => { setIsRegistering(false); setErrorMsg(''); }}
-                  className="text-[#1E3A8A] dark:text-blue-400 font-extrabold hover:underline uppercase tracking-wider ml-1"
+                  className="text-[#1E3A8A] dark:text-yellow-400 font-extrabold hover:underline uppercase tracking-wider ml-1"
                 >
                   Login Masuk
                 </button>
