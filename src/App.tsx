@@ -421,6 +421,7 @@ export default function App() {
           onLoginSuccess={handleLogin}
           mockUsersList={usersList}
           triggerToast={triggerToast}
+          onRegister={handleAddUser}
         />
         {toast.show && <Toast text={toast.text} type={toast.type} />}
       </div>
