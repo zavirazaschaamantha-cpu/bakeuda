@@ -126,7 +126,7 @@ export const ArsipView: React.FC<ArsipViewProps> = ({
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-xs font-semibold text-slate-500">
       
       {/* Left panel: Folders Directory sidebar */}
-      <div className="md:col-span-1 bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 rounded-3xl p-5 shadow-sm space-y-4">
+      <div className="md:col-span-1 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-3xl p-5 shadow-sm space-y-4">
         <h3 className="font-extrabold text-xs text-slate-800 dark:text-slate-100 uppercase tracking-widest border-b border-slate-50 dark:border-gray-850 pb-3">
           Arsip Direktori
         </h3>
@@ -166,7 +166,7 @@ export const ArsipView: React.FC<ArsipViewProps> = ({
       <div className="md:col-span-3 space-y-4">
         
         {/* Search header bar */}
-        <div className="bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 p-4 rounded-3xl shadow-sm flex items-center gap-4">
+        <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 p-4 rounded-3xl shadow-sm flex items-center gap-4">
           <div className="relative flex-1">
             <Search className="absolute left-3.5 top-3 h-4 w-4 text-slate-400" />
             <input
@@ -182,7 +182,7 @@ export const ArsipView: React.FC<ArsipViewProps> = ({
         {/* Files Grid list */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredArsip.length === 0 ? (
-            <div className="col-span-full bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 rounded-3xl p-8 text-center text-slate-400 flex flex-col items-center justify-center h-48">
+            <div className="col-span-full bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-3xl p-8 text-center text-slate-400 flex flex-col items-center justify-center h-48">
               <Folder className="w-10 h-10 text-slate-200 mb-2" />
               <span>Tidak ada dokumen yang diarsipkan di folder ini</span>
             </div>
@@ -191,7 +191,7 @@ export const ArsipView: React.FC<ArsipViewProps> = ({
               <div
                 key={file.id}
                 onClick={() => { setSelectedFile(file); setIsDetailOpen(true); }}
-                className="bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 rounded-2xl p-4 shadow-sm hover:shadow-md hover:border-blue-500/30 transition-all cursor-pointer flex flex-col justify-between space-y-3 text-left group"
+                className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-2xl p-4 shadow-sm hover:shadow-md hover:border-blue-500/30 transition-all cursor-pointer flex flex-col justify-between space-y-3 text-left group"
               >
                 <div className="flex items-start gap-3">
                   <div className="p-3 bg-red-50 dark:bg-red-950/20 text-red-500 rounded-xl">

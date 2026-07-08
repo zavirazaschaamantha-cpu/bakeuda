@@ -244,7 +244,7 @@ export const SuratMasukView: React.FC<SuratMasukViewProps> = ({
     <div className="space-y-6">
       
       {/* Action Header bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 p-4 rounded-3xl shadow-sm">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 p-4 rounded-3xl shadow-sm">
         <div className="relative flex-1 max-w-sm">
           <Search className="absolute left-3.5 top-3 h-4 w-4 text-slate-400" />
           <input
@@ -287,7 +287,7 @@ export const SuratMasukView: React.FC<SuratMasukViewProps> = ({
       </div>
 
       {/* Advanced Filters block */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-50/50 dark:bg-gray-850 border border-slate-100 dark:border-gray-800/80 p-4 rounded-3xl">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-50/50 dark:bg-gray-850 border border-slate-200 dark:border-gray-800/80 p-4 rounded-3xl">
         <div>
           <label className="block text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-1.5">Filter Kategori</label>
           <select
@@ -334,11 +334,11 @@ export const SuratMasukView: React.FC<SuratMasukViewProps> = ({
       </div>
 
       {/* Main Table Card */}
-      <div className="bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 rounded-3xl shadow-sm overflow-hidden">
+      <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-3xl shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-slate-50 dark:bg-gray-850 text-slate-500 dark:text-slate-400 font-bold border-b border-slate-100 dark:border-gray-800">
+              <tr className="bg-slate-50 dark:bg-gray-850 text-slate-500 dark:text-slate-400 font-bold border-b border-slate-200 dark:border-gray-800">
                 <th className="p-4 w-12 text-center">No</th>
                 <th className="p-4 cursor-pointer hover:text-blue-600" onClick={() => handleSort('nomorSurat')}>
                   <div className="flex items-center gap-1.5">
@@ -358,7 +358,7 @@ export const SuratMasukView: React.FC<SuratMasukViewProps> = ({
                 <th className="p-4 text-center">Aksi</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 dark:divide-gray-800/80 font-medium text-slate-700 dark:text-slate-300">
+            <tbody className="divide-y divide-slate-200 dark:divide-gray-800/80 font-medium text-slate-700 dark:text-slate-300">
               {paginatedSurat.length === 0 ? (
                 <tr>
                   <td colSpan={7} className="p-8 text-center text-slate-400">

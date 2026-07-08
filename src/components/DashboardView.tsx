@@ -175,7 +175,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* Card 1 */}
         <div
           onClick={() => setActiveView('surat_masuk')}
-          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border-t-4 border-[#1E3A8A] border-x border-b border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
+          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border-t-4 border-[#1E3A8A] border-x border-b border-slate-200 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
         >
           <div>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Surat Masuk Hari Ini</p>
@@ -192,7 +192,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* Card 2 */}
         <div
           onClick={() => setActiveView('surat_keluar')}
-          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border-t-4 border-blue-400 border-x border-b border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
+          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border-t-4 border-blue-400 border-x border-b border-slate-200 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
         >
           <div>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Surat Keluar Hari Ini</p>
@@ -209,7 +209,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* Card 3 */}
         <div
           onClick={() => setActiveView('disposisi')}
-          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border-t-4 border-yellow-400 border-x border-b border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
+          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border-t-4 border-yellow-400 border-x border-b border-slate-200 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
         >
           <div>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Disposisi Aktif</p>
@@ -226,7 +226,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* Card 4 */}
         <div
           onClick={() => setActiveView('arsip')}
-          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border-t-4 border-yellow-500 border-x border-b border-slate-100 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
+          className="bg-white dark:bg-gray-900 p-5 rounded-xl shadow-sm border-t-4 border-yellow-500 border-x border-b border-slate-200 dark:border-gray-800 cursor-pointer hover:shadow-md transition-all group flex flex-col justify-between"
         >
           <div>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Total Arsip Digital</p>
@@ -245,7 +245,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Monthly Volume Area Chart */}
-        <div className="bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 rounded-2xl p-6 shadow-sm lg:col-span-2 flex flex-col">
+        <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-2xl p-6 shadow-sm lg:col-span-2 flex flex-col">
           <div className="flex items-center justify-between mb-4 border-b border-slate-50 dark:border-gray-800 pb-3">
             <div>
               <h4 className="text-sm font-bold text-slate-800 dark:text-slate-100">Tren Administrasi Surat</h4>
@@ -282,7 +282,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* Pie Status Distribution */}
-        <div className="bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+        <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
           <div className="flex items-center justify-between border-b border-slate-50 dark:border-gray-800 pb-3">
             <div>
               <h4 className="text-sm font-bold text-slate-800 dark:text-slate-100">Status Penyelesaian</h4>
@@ -334,7 +334,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         {/* Deadline Warnings */}
-        <div className="bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 rounded-2xl p-5 shadow-sm flex flex-col h-[340px]">
+        <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-2xl p-5 shadow-sm flex flex-col h-[340px]">
           <h4 className="font-bold text-xs text-slate-800 dark:text-slate-100 flex items-center gap-2 border-b border-slate-50 dark:border-gray-800 pb-3">
             <span className="w-1.5 h-1.5 bg-red-500 rounded-full" />
             Batas Waktu Administrasi
@@ -356,7 +356,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* User Activity Tracker (Audit Logs) */}
-        <div className="bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 rounded-2xl p-5 shadow-sm flex flex-col h-[340px]">
+        <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-2xl p-5 shadow-sm flex flex-col h-[340px]">
           <h4 className="font-bold text-xs text-slate-800 dark:text-slate-100 flex items-center gap-2 border-b border-slate-50 dark:border-gray-800 pb-3">
             <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
             Aktivitas Pengguna Terkini
@@ -378,14 +378,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* Agenda Hari Ini */}
-        <div className="bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 rounded-2xl p-5 shadow-sm flex flex-col h-[340px]">
+        <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-2xl p-5 shadow-sm flex flex-col h-[340px]">
           <h4 className="font-bold text-xs text-slate-800 dark:text-slate-100 flex items-center gap-2 border-b border-slate-50 dark:border-gray-800 pb-3">
             <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
             Agenda Kerja Terdekat
           </h4>
           <div className="flex-1 overflow-y-auto mt-3 space-y-2.5 scrollbar-thin">
             {agendas.map((ag) => (
-              <div key={ag.id} className="p-3 bg-slate-50 dark:bg-gray-850 border border-slate-100 dark:border-gray-800 rounded-xl text-[11px]">
+              <div key={ag.id} className="p-3 bg-slate-50 dark:bg-gray-850 border border-slate-200 dark:border-gray-800 rounded-xl text-[11px]">
                 <div className="flex justify-between items-center">
                   <span className={`text-[9px] font-extrabold px-2 py-0.5 rounded uppercase ${
                     ag.kategori === 'Rapat' ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300' :
@@ -412,7 +412,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       </div>
 
       {/* Footer Activity Log (Sleek Theme Design) */}
-      <div className="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-slate-100 dark:border-gray-800 overflow-hidden shrink-0 mt-6">
+      <div className="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-slate-200 dark:border-gray-800 overflow-hidden shrink-0 mt-6">
         <div className="px-6 py-3 border-b border-slate-50 dark:border-gray-800 flex items-center justify-between bg-slate-50/50 dark:bg-gray-900/50">
           <h4 className="text-[10px] font-extrabold text-slate-750 dark:text-slate-300 uppercase tracking-widest">Log Aktivitas Terbaru</h4>
           <span onClick={() => setActiveView('audit')} className="text-[10px] text-[#1E3A8A] dark:text-blue-400 font-bold cursor-pointer hover:underline">Lihat Audit Log →</span>

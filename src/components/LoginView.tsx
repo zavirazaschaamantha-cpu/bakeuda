@@ -117,7 +117,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-gray-950 flex flex-col md:flex-row items-center justify-center p-6 text-xs text-slate-500 font-semibold gap-8">
+    <div className="min-h-screen bg-[#F1F5F9] dark:bg-gray-950 flex flex-col md:flex-row items-center justify-center p-6 text-xs text-slate-500 font-semibold gap-8">
       
       {/* Left decoration: Logo & Title card */}
       <div className="max-w-md text-left space-y-4">

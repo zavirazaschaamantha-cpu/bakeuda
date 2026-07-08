@@ -141,7 +141,7 @@ export const DisposisiTrackerView: React.FC<DisposisiTrackerViewProps> = ({
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 text-xs">
       
       {/* Left Sidebar: Letters Queue list */}
-      <div className="bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 rounded-3xl p-5 shadow-sm h-[650px] flex flex-col">
+      <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-3xl p-5 shadow-sm h-[650px] flex flex-col">
         <h3 className="font-bold text-sm text-slate-800 dark:text-slate-100 flex items-center gap-2 border-b border-slate-50 dark:border-gray-850 pb-3">
           <GitPullRequest className="w-5 h-5 text-blue-500" />
           Antrean Disposisi Surat
@@ -156,7 +156,7 @@ export const DisposisiTrackerView: React.FC<DisposisiTrackerViewProps> = ({
               className={`p-3.5 rounded-2xl border transition-all cursor-pointer text-left ${
                 s.id === selectedSuratId
                   ? 'bg-blue-50/60 border-blue-200 dark:bg-blue-950/10 dark:border-blue-900/60 ring-2 ring-blue-500/10'
-                  : 'bg-white border-slate-100 hover:bg-slate-50 dark:bg-gray-900 dark:border-gray-800'
+                  : 'bg-white border-slate-200 hover:bg-slate-50 dark:bg-gray-900 dark:border-gray-800'
               }`}
             >
               <div className="flex justify-between items-start gap-1">
@@ -172,7 +172,7 @@ export const DisposisiTrackerView: React.FC<DisposisiTrackerViewProps> = ({
               <h4 className="font-bold text-slate-800 dark:text-slate-200 mt-2 line-clamp-1">{s.asalSurat}</h4>
               <p className="text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed text-[11px]">{s.perihal}</p>
               
-              <div className="flex justify-between items-center mt-3 border-t border-slate-100 dark:border-gray-850 pt-2 text-[10px]">
+              <div className="flex justify-between items-center mt-3 border-t border-slate-200 dark:border-gray-850 pt-2 text-[10px]">
                 <span className="text-slate-400 font-mono">Diterima: {s.tanggalDiterima}</span>
                 <span className={`font-bold uppercase ${
                   s.status === 'Selesai' ? 'text-emerald-500' :
@@ -190,10 +190,10 @@ export const DisposisiTrackerView: React.FC<DisposisiTrackerViewProps> = ({
       {/* Right panel: Timeline & Disposition controls */}
       <div className="lg:col-span-2 space-y-6">
         {selectedSurat ? (
-          <div className="bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 rounded-3xl p-6 shadow-sm flex flex-col min-h-[650px]">
+          <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-3xl p-6 shadow-sm flex flex-col min-h-[650px]">
             
             {/* Header / Meta */}
-            <div className="border-b border-slate-100 dark:border-gray-850 pb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="border-b border-slate-200 dark:border-gray-850 pb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
                 <span className="text-[10px] font-mono text-blue-600 dark:text-blue-400 font-bold uppercase tracking-widest bg-blue-50 dark:bg-blue-950/40 px-2.5 py-1 rounded-full">
                   Smart Tracker
@@ -233,7 +233,7 @@ export const DisposisiTrackerView: React.FC<DisposisiTrackerViewProps> = ({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-5 flex-1">
               
               {/* Visual Timeline (Visual tree) */}
-              <div className="space-y-4 border-r border-slate-100 dark:border-gray-850 pr-4 flex flex-col justify-between">
+              <div className="space-y-4 border-r border-slate-200 dark:border-gray-850 pr-4 flex flex-col justify-between">
                 <div>
                   <h4 className="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-1.5 mb-4">
                     <Clock className="w-4 h-4 text-slate-500" />
