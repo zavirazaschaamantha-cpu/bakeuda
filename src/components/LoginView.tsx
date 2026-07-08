@@ -22,52 +22,56 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     if (!username || !password) {
-      setErrorMsg('Harap masukkan username dan kata sandi Anda!');
+      setErrorMsg('Harap masukkan username atau email dan kata sandi Anda!');
       triggerToast('Kolom login wajib diisi!', 'warning');
       return;
     }
 
-    // Authenticate with mockUsersList
-    const matchedUser = mockUsersList.find(u => u.username === username.trim().toLowerCase());
+    // Authenticate with mockUsersList by matching either username or email (case-insensitive)
+    const inputVal = username.trim().toLowerCase();
+    const matchedUser = mockUsersList.find(u => 
+      u.username.toLowerCase() === inputVal || u.email.toLowerCase() === inputVal
+    );
+
     if (matchedUser) {
       setErrorMsg('');
       triggerToast(`Selamat datang kembali, ${matchedUser.name}!`, 'success');
       onLoginSuccess(matchedUser);
     } else {
-      setErrorMsg('Username atau Kata Sandi salah!');
+      setErrorMsg('Username/Email atau Kata Sandi salah!');
       triggerToast('Kredensial tidak valid!', 'danger');
     }
   };
 
   const handleQuickFill = (u: User) => {
-    setUsername(u.username);
+    setUsername(u.email);
     setPassword('secret_password');
     setErrorMsg('');
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-gray-950 flex flex-col md:flex-row items-center justify-center p-6 text-xs text-slate-500 font-semibold gap-8">
+    <div className="min-h-screen bg-[#F1F5F9] dark:bg-gray-950 flex flex-col md:flex-row items-center justify-center p-6 text-xs text-slate-500 font-semibold gap-8">
       
       {/* Left decoration: Logo & Title card */}
       <div className="max-w-md text-left space-y-4">
-        <div className="inline-flex p-3 bg-blue-900 text-white rounded-2xl shadow-xl shadow-blue-900/10">
+        <div className="inline-flex p-3 bg-[#1E3A8A] text-white rounded-2xl shadow-xl shadow-blue-900/10">
           <ShieldCheck className="w-8 h-8" />
         </div>
         <div className="space-y-1.5">
           <h1 className="text-xl font-black text-slate-800 dark:text-white uppercase tracking-wide leading-tight">
             Smart Office Dashboard Sekretariat (SODS)
           </h1>
-          <p className="text-slate-500 dark:text-slate-400 font-bold">Badan Keuangan Daerah Kota Pangkalpinang</p>
+          <p className="text-blue-700 dark:text-blue-400 font-bold">Badan Keuangan Daerah Kota Pangkalpinang</p>
         </div>
         <p className="text-[11px] text-slate-400 leading-relaxed font-medium">
           Sistem administrasi persuratan terpadu dan disposisi elektronik terintegrasi. Menunjang tata kelola pemerintahan yang responsif, transparan, dan akuntabel.
         </p>
 
         {/* Quick Help: credentials assistant */}
-        <div className="bg-white dark:bg-gray-900 border border-slate-100 dark:border-gray-800 p-4 rounded-3xl shadow-sm space-y-3">
+        <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 p-4 rounded-2xl shadow-sm space-y-3">
           <h4 className="font-extrabold text-[10px] text-slate-700 dark:text-slate-300 uppercase tracking-widest flex items-center gap-1">
-            <HelpCircle className="w-4 h-4 text-blue-500" />
-            Asisten Login Cepat (Uji Coba Multi-Role)
+            <HelpCircle className="w-4 h-4 text-[#1E3A8A]" />
+            Asisten Login Cepat (Uji Coba Email/Username)
           </h4>
           <div className="grid grid-cols-2 gap-2">
             {mockUsersList.map((u) => (
@@ -75,10 +79,11 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
                 key={u.id}
                 type="button"
                 onClick={() => handleQuickFill(u)}
-                className="p-2 border border-slate-100 dark:border-gray-800 hover:border-blue-500 rounded-xl hover:bg-slate-50 text-left transition-all"
+                className="p-2.5 border border-slate-100 dark:border-gray-800 hover:border-blue-500 rounded-xl hover:bg-slate-50 dark:hover:bg-gray-800/50 text-left transition-all"
               >
                 <p className="font-bold text-slate-800 dark:text-white truncate text-[10px]">{u.name.split(',')[0]}</p>
-                <p className="text-[9px] text-blue-600 dark:text-blue-400 font-bold uppercase mt-0.5">{u.role}</p>
+                <p className="text-[9px] text-slate-400 truncate mt-0.5">{u.email}</p>
+                <p className="text-[8px] text-[#1E3A8A] dark:text-blue-400 font-extrabold uppercase mt-1 tracking-wider">{u.role}</p>
               </button>
             ))}
           </div>
@@ -86,12 +91,12 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
       </div>
 
       {/* Right side: Login form */}
-      <div className="bg-white dark:bg-gray-900 border border-slate-150 dark:border-gray-800 rounded-3xl p-6 shadow-xl w-full max-w-sm text-left space-y-5">
+      <div className="bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 rounded-2xl p-6 shadow-xl w-full max-w-sm text-left space-y-5">
         <div>
           <h2 className="font-extrabold text-sm text-slate-800 dark:text-slate-100 uppercase tracking-wide">
             Portal Masuk Sistem
           </h2>
-          <p className="text-[10px] text-slate-400 mt-1 font-semibold">Silakan masukkan nama akun dan kata sandi kedinasan Anda</p>
+          <p className="text-[10px] text-slate-400 mt-1 font-semibold">Silakan masukkan nama akun, email, atau kredensial kedinasan Anda</p>
         </div>
 
         {errorMsg && (
@@ -103,16 +108,16 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
 
         <form onSubmit={handleLogin} className="space-y-4">
           <div className="space-y-1.5">
-            <label className="font-bold text-slate-700 dark:text-slate-300">Username Kedinasan</label>
+            <label className="font-bold text-slate-700 dark:text-slate-300">Username / Email Kedinasan</label>
             <div className="relative">
-              <UserIcon className="absolute left-3.5 top-3 h-4.5 w-4.5 text-slate-400" />
+              <UserIcon className="absolute left-3.5 top-3.5 h-4 w-4 text-slate-400" />
               <input
                 type="text"
                 required
                 value={username}
                 onChange={(e) => { setUsername(e.target.value); setErrorMsg(''); }}
-                placeholder="cth: hendra.kaban"
-                className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 dark:bg-gray-950 dark:border-gray-800 rounded-2xl outline-none focus:border-blue-500 dark:text-slate-100 transition-all text-xs"
+                placeholder="cth: superadmin atau nama@pangkalpinangkota.go.id"
+                className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 dark:bg-gray-950 dark:border-gray-800 rounded-xl outline-none focus:border-blue-500 dark:text-slate-100 transition-all text-xs"
               />
             </div>
           </div>
@@ -120,14 +125,14 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
           <div className="space-y-1.5">
             <label className="font-bold text-slate-700 dark:text-slate-300">Kata Sandi</label>
             <div className="relative">
-              <Lock className="absolute left-3.5 top-3 h-4.5 w-4.5 text-slate-400" />
+              <Lock className="absolute left-3.5 top-3.5 h-4 w-4 text-slate-400" />
               <input
                 type="password"
                 required
                 value={password}
                 onChange={(e) => { setPassword(e.target.value); setErrorMsg(''); }}
                 placeholder="Masukkan kata sandi..."
-                className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 dark:bg-gray-950 dark:border-gray-800 rounded-2xl outline-none focus:border-blue-500 dark:text-slate-100 transition-all text-xs"
+                className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 dark:bg-gray-950 dark:border-gray-800 rounded-xl outline-none focus:border-blue-500 dark:text-slate-100 transition-all text-xs"
               />
             </div>
           </div>
@@ -149,7 +154,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ onLoginSuccess, mockUsersL
 
           <button
             type="submit"
-            className="w-full py-2.5 bg-blue-900 hover:bg-blue-950 text-white font-extrabold rounded-2xl flex items-center justify-center gap-1.5 shadow-lg shadow-blue-900/10 transition-colors uppercase tracking-wider"
+            className="w-full py-2.5 bg-[#1E3A8A] hover:bg-blue-850 text-white font-extrabold rounded-xl flex items-center justify-center gap-1.5 shadow-lg shadow-blue-900/10 transition-colors uppercase tracking-wider"
           >
             <ShieldCheck className="w-4.5 h-4.5" />
             <span>Verifikasi Akun</span>
